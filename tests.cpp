@@ -4,13 +4,14 @@
 #include <filesystem>
 #include <set>
 #include <string>
+#include <utility>
 
 namespace fs = std::filesystem;
 using namespace std::literals;
 
 const auto data_path = fs::path(".") / "test_data";
 
-std::pair<std::set<std::string>> load_cars_and_cities(const CarStatistics &cs)
+std::pair<std::set<std::string>, std::set<std::string>> load_cars_and_cities(const CarStatistics &cs)
 {
     auto cars = cs.cars();
     auto scars = std::set(cars.begin(), cars.end());
@@ -32,7 +33,7 @@ std::set<T> make_set(const std::vector<T> &vec)
     return svec;
 }
 
-TEST_CASE("ONE CITY", "loading")
+TEST_CASE("ONE CITY loading", "")
 {
     const CarStatistics cs(data_path / "one_small");
 
@@ -48,7 +49,7 @@ TEST_CASE("ONE CITY", "loading")
         REQUIRE(cs.cities(car) == std::vector{"brno"s});
 }
 
-TEST_CASE("ONE CITY", "statistics")
+TEST_CASE("ONE CITY statistics", "")
 {
     const CarStatistics cs(data_path / "one_small");
 
@@ -67,7 +68,7 @@ TEST_CASE("ONE CITY", "statistics")
     REQUIRE(cs.cars_per_city() == std::vector{"brno 4"s});
 }
 
-TEST_CASE("MORE CITIES", "loading")
+TEST_CASE("MORE CITIES loading", "")
 {
     const CarStatistics cs(data_path / "more_small");
 
@@ -91,7 +92,7 @@ TEST_CASE("MORE CITIES", "loading")
     REQUIRE(make_set(cs.cities("skoda")) == std::set{"olomouc"s});
 }
 
-TEST_CASE("MORE CITIES", "statistics"){
+TEST_CASE("MORE CITIES statistics", ""){
     const CarStatistics cs(data_path / "more_small");
 
     REQUIRE(cs.total_price() == 6850000);
