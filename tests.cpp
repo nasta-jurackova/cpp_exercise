@@ -59,10 +59,10 @@ TEST_CASE("ONE CITY", "") {
 	}
 
 	SECTION("total price of car in city") {
-		REQUIRE(cs.total_price("brno", "bmw") == 450000);
-		REQUIRE(cs.total_price("brno", "renault") == 250000);
-		REQUIRE(cs.total_price("brno", "toyota") == 550000);
-		REQUIRE(cs.total_price("brno", "lexus") == 1450000);
+		REQUIRE(cs.total_price("bmw", "brno") == 450000);
+		REQUIRE(cs.total_price("renault", "brno") == 250000);
+		REQUIRE(cs.total_price("toyota", "brno") == 550000);
+		REQUIRE(cs.total_price("lexus", "brno") == 1450000);
 	}
 
 	SECTION("Cheapest cars") {
@@ -117,20 +117,18 @@ TEST_CASE("MORE CITIES", "") {
 	}
 
 	SECTION("total price of car in city") {
-		REQUIRE(cs.total_price("brno", "bmw") == 350000);
-		REQUIRE(cs.total_price("brno", "renault") == 250000);
-		REQUIRE(cs.total_price("brno", "toyota") == 550000);
-		REQUIRE(cs.total_price("brno", "lexus") == 1450000);
+		REQUIRE(cs.total_price("bmw", "brno") == 350000);
+		REQUIRE(cs.total_price("renault", "brno") == 250000);
+		REQUIRE(cs.total_price("toyota", "brno") == 550000);
+		REQUIRE(cs.total_price("lexus", "brno") == 1450000);
 
-		REQUIRE(cs.total_price("praha", "bmw") == 1450000);
-		REQUIRE(cs.total_price("praha", "lexus") == 450000);
+		REQUIRE(cs.total_price("bmw", "praha") == 1450000);
+		REQUIRE(cs.total_price("lexus", "praha") == 450000);
 
-		REQUIRE(cs.total_price("olomouc", "bmw") == 350000);
-		REQUIRE(cs.total_price("olomouc", "lexus") == 1450000);
-		REQUIRE(cs.total_price("olomouc", "skoda") == 450000);
+		REQUIRE(cs.total_price("bmw", "olomouc") == 350000);
+		REQUIRE(cs.total_price("lexus", "olomouc") == 1450000);
+		REQUIRE(cs.total_price("skoda", "olomouc") == 450000);
 	}
 
 	SECTION("Cheapest cars") { REQUIRE(cs.cheapest("bmw") == "olomouc"); }
-
-	SECTION("Cars per city") {}
 }
