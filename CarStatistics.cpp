@@ -133,5 +133,5 @@ std::vector<std::string> CarStatistics::cars_per_city() const
     {
         result.push_back(std::format("{} {}", city, table.size()));
     }
-    return {};
+    return result;
 }
