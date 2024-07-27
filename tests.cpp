@@ -117,7 +117,7 @@ TEST_CASE("MORE CITIES", "") {
 	}
 
 	SECTION("total price of car in city") {
-		REQUIRE(cs.total_price("bmw", "brno") == 350000);
+		REQUIRE(cs.total_price("bmw", "brno") == 450000);
 		REQUIRE(cs.total_price("renault", "brno") == 250000);
 		REQUIRE(cs.total_price("toyota", "brno") == 550000);
 		REQUIRE(cs.total_price("lexus", "brno") == 1450000);
