@@ -20,7 +20,7 @@ CarStatistics::CarStatistics(const std::filesystem::path &path)
             std::string price = line.substr(line.find(deliminer) + 1);
             table.emplace_back(std::stoi(year), car, std::stoi(price));
         }
-        data[dir_entry.path().filename()] = table;
+        data[dir_entry.path().stem()] = table;
     }
 }
 
