@@ -130,7 +130,7 @@ TEST_CASE("MORE CITIES", "") {
 		REQUIRE(cs.total_price("olomouc", "skoda") == 450000);
 	}
 
-	SECTION("Cheapest cars") { REQUIRE(cs.cheapest("bmw") == "praha"); }
+	SECTION("Cheapest cars") { REQUIRE(cs.cheapest("bmw") == "olomouc"); }
 
 	SECTION("Cars per city") {}
 }
