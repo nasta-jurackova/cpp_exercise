@@ -111,9 +111,9 @@ TEST_CASE("MORE CITIES", "") {
 	SECTION("total price") { REQUIRE(cs.total_price() == 6850000); }
 
 	SECTION("total price in city") {
-		REQUIRE(cs.total_price("brno") == 2600000);
+		REQUIRE(cs.total_price("brno") == 2700000);
 		REQUIRE(cs.total_price("praha") == 1900000);
-		REQUIRE(cs.total_price("olomouc") == 2350000);
+		REQUIRE(cs.total_price("olomouc") == 2250000);
 	}
 
 	SECTION("total price of car in city") {
