@@ -3,47 +3,47 @@
 CarStatistics::CarStatistics(std::filesystem::path path)
 {}
 
-std::vector<std::string> CarStatistics::cars()
+std::vector<std::string> CarStatistics::cars() const
 {
     return {};
 }
 
-std::vector<std::string> CarStatistics::cities()
+std::vector<std::string> CarStatistics::cities() const
 {
     return {};
 }
 
-std::vector<std::string> CarStatistics::cars(std::string city)
+std::vector<std::string> CarStatistics::cars(std::string city) const
 {
     return {};
 }
 
-std::vector<std::string> CarStatistics::cities(std::string car)
+std::vector<std::string> CarStatistics::cities(std::string car) const
 {
     return {};
 }
 
-std::size_t CarStatistics::total_price()
+std::size_t CarStatistics::total_price() const
 {
     return 0;
 }
 
-std::size_t CarStatistics::total_price(std::string city)
+std::size_t CarStatistics::total_price(std::string city) const
 {
     return 0;
 }
 
-std::size_t CarStatistics::total_price(std::string car, std::string city)
+std::size_t CarStatistics::total_price(std::string car, std::string city) const
 {
     return 0;
 }
 
-std::string CarStatistics::cheapest(std::string car)
+std::string CarStatistics::cheapest(std::string car) const
 {
     return "";
 }
 
-std::vector<std::string> CarStatistics::cars_per_city()
+std::vector<std::string> CarStatistics::cars_per_city() const
 {
     return {};
 }
