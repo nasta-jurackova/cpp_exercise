@@ -15,6 +15,8 @@ You will write small program, that calculates statistics about car sales. You wi
     - `total_price(car)` that takes a car and returns sum of prices accross all cities
     - `total_price(car, city)` that returns some of prices of car in city 
     - `cheapest(car)` that returns city where the car was sold the cheapest
+    - `cars_per_city()` return returns vetor of strings, where string is in fromat "<city_name> <car_count>" (note that cars with the same name are still distinct cars) 
+
 
 ## C++ details
 - Use C++20 without 3rd party libs (catch2 is allowed for tests).
