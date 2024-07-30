@@ -2,6 +2,7 @@
 
 #include <vector>
 #include <iostream>
+#include <memory>
 
 class Node: public INode
 {
@@ -39,10 +40,10 @@ class Node: public INode
     }
 };
 
-Node::curr_id = 0;
+std::size_t Node::curr_id = 0;
 
 std::unique_ptr<INode> create_node()
 {
     Node::curr_id++;
-    return Node(Node::curr_id);
+    return std::make_unique<Node>(Node::curr_id);
 }
