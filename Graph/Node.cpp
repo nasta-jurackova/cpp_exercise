@@ -10,18 +10,18 @@ class Node: public INode
     std::size_t id;
 
     public:
-    static std::size_t curr_id = 0;
+    static std::size_t curr_id;
 
     Node(std::size_t id):
     id(id)
     {}
 
-    std::size_t successor_count()
+    std::size_t successor_count() const
     {
         return count_children;
     }
 
-    std::shared_ptr<INode> successor(std::size_t idx)
+    std::shared_ptr<INode> successor(std::size_t idx) const
     {
         return children[idx];
     }
@@ -32,12 +32,14 @@ class Node: public INode
         count_children++;
     }
 
-    std::size_t print_me()
+    std::size_t print_me() const
     {
         std::cout << id << '\n';
         return id;
     }
 };
+
+Node::curr_id = 0;
 
 std::unique_ptr<INode> create_node()
 {
