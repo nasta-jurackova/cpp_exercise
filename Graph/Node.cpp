@@ -38,6 +38,11 @@ class Node: public INode
         std::cout << id << '\n';
         return id;
     }
+
+    std::size_t id() const
+    {
+        return id;
+    }
 };
 
 std::size_t Node::curr_id = 0;
