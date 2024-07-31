@@ -3,6 +3,7 @@
 #include <vector>
 #include <numeric>
 #include <algorithm>
+#include <utility>
 
 template<typename T>
 std::size_t count_trues(const std::vector<T> &vec)
@@ -33,5 +34,5 @@ template<typename T>
 std::pair<T, T> find_bounds(const std::vector<T> &vec)
 {
     auto [min, max] = std::minmax_element(vec.begin(), vec.end());
-    return std::pair<T, T>(*min, *max);
+    return std::make_pair<T, T>(*min, *max);
 }
