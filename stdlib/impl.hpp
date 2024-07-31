@@ -27,12 +27,12 @@ T sum_it_up(const std::vector<T> &vec)
 template<typename T>
 void increment(std::vector<T> &vec)
 {
-    std::transform(vec.begin(), vec.end(), vec.begin(), [](T& i){++i;});
+    std::transform(vec.begin(), vec.end(), vec.begin(), [](T& i){return ++i;});
 }
 
 template<typename T>
 std::pair<T, T> find_bounds(const std::vector<T> &vec)
 {
     auto [min, max] = std::minmax_element(vec.begin(), vec.end());
-    return std::make_pair<T, T>(*min, *max);
+    return {*min, *max};
 }
