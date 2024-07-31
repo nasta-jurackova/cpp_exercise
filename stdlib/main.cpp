@@ -11,12 +11,27 @@ void print_vector(const auto& vec) {
 }
 
 int main() {
-	// create simple vector
-	std::vector<int> vec = {1, 2, 3, 4};
+	std::cout << "count trues:\n";
+	std::vector<int> vec1 = {0, 1, 1, 0, 0, 1};
+	print_vector(vec1);
+    std::cout << count_trues(vec1) << "\n";
+	std::cout << "\n";
 
-    // apply function
-    does_noop(vec);
+	std::cout << "sum it up:\n";
+	std::vector<int> vec2 = {1, 1, 1, 2, 3};
+	print_vector(vec2);
+	std::cout << sum_it_up(vec2);
+	std::cout << "\n";
 
-    // print vector
-    print_vector(vec);
+	std::cout << "increment:\n";
+	std::vector<int> vec3 = {0, 1, 2, 3};
+	print_vector(vec3);
+	increment(vec3);
+	print_vector(vec3);
+	std::cout << "\n";
+
+	std::cout << "find bounds:\n";
+	std::vector<int> vec4 = {3, 2, 1, 4, 6, 5};
+	print_vector(vec4);
+	std::cout << find_bounds(vec4).first << ", " << find_bounds(vec4).second << "\n";
 }

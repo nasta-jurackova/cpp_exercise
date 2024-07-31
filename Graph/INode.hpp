@@ -11,4 +11,4 @@ class INode {
 	virtual std::size_t print_me() const = 0;
 };
 
-inline std::unique_ptr<INode> create_node() { return nullptr; }
+std::unique_ptr<INode> create_node();

@@ -8,40 +8,40 @@ class Node: public INode
 {
     std::vector<std::shared_ptr<INode>> children = {};
     std::size_t count_children = 0;
-    std::size_t id;
+    std::size_t _id;
 
     public:
     static std::size_t curr_id;
 
     Node(std::size_t id):
-    id(id)
+    _id(id)
     {}
 
-    std::size_t successor_count() const
+    std::size_t successor_count() const override
     {
         return count_children;
     }
 
-    std::shared_ptr<INode> successor(std::size_t idx) const
+    std::shared_ptr<INode> successor(std::size_t idx) const override
     {
         return children[idx];
     }
 
-    std::size_t add_successor(std::shared_ptr<INode> node)
+    std::size_t add_successor(std::shared_ptr<INode> node) override
     {
         children.push_back(node);
         count_children++;
     }
 
-    std::size_t print_me() const
+    std::size_t print_me() const override
     {
-        std::cout << id << '\n';
-        return id;
+        std::cout << _id << '\n';
+        return _id;
     }
 
-    std::size_t id() const
+    std::size_t id() const override
     {
-        return id;
+        return _id;
     }
 };
 

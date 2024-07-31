@@ -4,11 +4,6 @@
 
 std::shared_ptr<INode> Graph::get_root() const { return m_root; }
 
-void Graph::print() const {
-    std::map<std::size_t, bool> seen;
-    print_rec(m_root, seen);
-}
-
 void print_rec(std::shared_ptr<INode> node, std::map<std::size_t, bool> seen)
 {
     if(node == nullptr)
@@ -19,9 +14,16 @@ void print_rec(std::shared_ptr<INode> node, std::map<std::size_t, bool> seen)
     for(std::size_t count = 0; count < node->successor_count(); count++)
     {
         std::shared_ptr<INode> curr = node->successor(count);
-        if(seen.at(curr->id()) == false)
+        if(!seen.at(curr->id()))
         {
             print_rec(curr, seen);
         }
     }
 }
+
+
+void Graph::print() const {
+    std::map<std::size_t, bool> seen;
+    print_rec(m_root, seen);
+}
+
