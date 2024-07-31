@@ -5,7 +5,7 @@
 #include <algorithm>
 
 template<typename T>
-std::size_t count_trues(std::vector<T> vec)
+std::size_t count_trues(const std::vector<T> &vec)
 {
     auto add_bool = [](std::size_t acc, const T& to_add)
     {
@@ -18,19 +18,20 @@ std::size_t count_trues(std::vector<T> vec)
 }
 
 template<typename T>
-T sum_it_up(std::vector<T> vec)
+T sum_it_up(const std::vector<T> &vec)
 {
-    return std::accumulate(vec.begin(), vec.end());
+    return std::accumulate(vec.begin(), vec.end(), T{});
 }
 
 template<typename T>
-void increment(std::vector<T> vec)
+void increment(std::vector<T> &vec)
 {
     std::transform(vec.begin(), vec.end(), vec.begin(), [](T& i){++i;});
 }
 
 template<typename T>
-std::pair<T, T> find_bounds(std::vector<T> vec)
+std::pair<T, T> find_bounds(const std::vector<T> &vec)
 {
-    return std::minmax_element(vec.begin(), vec.end());
+    auto [min, max] = std::minmax_element(vec.begin(), vec.end());
+    return std::pair<T, T>(*min, *max);
 }
